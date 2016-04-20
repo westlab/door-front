@@ -2,10 +2,10 @@ machine:
   timezone:
       Asia/Tokyo
   node:
+    version: 5.5
 
 dependencies:
   pre:
-      - nvm use 5.5
       - npm install
 
 test:
