@@ -1,0 +1,18 @@
+machine:
+  timezone:
+      Asia/Tokyo
+  node:
+    version: 5.7.1
+  post:
+    - npm install -g npm@3
+    - npm version
+
+dependencies:
+  pre:
+    - npm install
+
+test:
+  pre:
+    - tslint "$(find src | grep '\.ts$')"
+  override:
+    - npm test
