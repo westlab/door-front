@@ -1,0 +1,15 @@
+machine:
+  timezone:
+      Asia/Tokyo
+  node:
+
+dependencies:
+  pre:
+      - nvm use 5.5
+      - npm install
+
+test:
+  pre:
+    - tslint "$(find src | grep '\.ts$')"
+  override:
+    - npm test
