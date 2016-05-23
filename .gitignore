@@ -8,3 +8,7 @@
 assets/styles/*.css
 
 .idea
+app/**/*.js
+app/**/*.map
+test/**/*.js
+test/**/*.map
