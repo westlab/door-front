@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {APP_ROUTES} from './app.routes';
-import {NavbarComponent} from './navbar/navbar.component';
+import {NavbarComponent} from './shared/navbar/navbar.component';
 import {LoggerService} from './blocks/logger.service';
 
 @Component({
