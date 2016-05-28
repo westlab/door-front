@@ -10,6 +10,7 @@ export class SimplebindComponent {
     private myname: string;
 
     constructor() {
+        console.log('foo');
         this.myname = 'Simple';
     }
 }
