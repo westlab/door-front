@@ -26,14 +26,14 @@ describe('AppComponent', () => {
         ROUTER_FAKE_PROVIDERS
     ]);
 
-    it('should have brand Angular 2 Starter', async(inject([TestComponentBuilder],
+    it('should have brand DooR', async(inject([TestComponentBuilder],
         (tsb: TestComponentBuilder) => {
             tsb.createAsync(TestComponent).then((fixture) => {
                 fixture.detectChanges();
                 let compiled = fixture.debugElement.nativeElement;
                 expect(compiled).toBeDefined();
                 expect(compiled.querySelector('a.navbar-brand'))
-                    .toHaveText('Angular 2 Starter');
+                    .toHaveText('DooR');
             });
         })));
 });
