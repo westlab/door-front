@@ -1,4 +1,4 @@
-export class Count {
+export interface ICount {
     name: string;
     count: number;
 }
