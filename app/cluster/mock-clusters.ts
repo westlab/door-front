@@ -1,5 +1,4 @@
-import {Cluster} from './cluster.model';
-export var CLUSTERS: Cluster[] = [
+export var CLUSTERS = [
     {
         name: 'b4',
         data: [

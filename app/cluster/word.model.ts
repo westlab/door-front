@@ -1,6 +1,6 @@
 import {Coordinate} from './coordinate.model';
 
-export class Word { 
+export class Word {
     public name: string;
     public value: number;
     public coordinate: Coordinate;
