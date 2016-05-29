@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Count} from '../shared/models/count.model';
+import {ICount} from '../shared/interfaces/count.interface';
 
 @Component({
     selector: 'as-dr-rank',
@@ -10,5 +10,5 @@ import {Count} from '../shared/models/count.model';
 })
 export class DrRankComponent {
     @Input() title: string;
-    @Input() counts: Count[];
+    @Input() counts: ICount[];
 }

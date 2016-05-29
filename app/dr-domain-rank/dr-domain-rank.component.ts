@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Count} from '../shared/models/count.model';
+import {DomainCount} from '../shared/models/domain-count.model';
 import {DrRankComponent} from '../dr-rank/dr-rank.component';
 
 @Component({
@@ -10,7 +10,7 @@ import {DrRankComponent} from '../dr-rank/dr-rank.component';
     ]
 })
 export class DrDomainRankComponent {
-    domainCounts: Count[];
+    domainCounts: DomainCount[];
 
     constructor() {
         this.domainCounts = [
