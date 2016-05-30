@@ -13,12 +13,14 @@ import {ClusterService} from './cluster.service';
 
 export class ClusterComponent implements OnInit {
     clusters: Cluster[];
-
     constructor(
         private clusterService: ClusterService
     ) { }
-
+    getClusters() {
+        this.clusters = this.clusterService.convertCluster();
+    }
     ngOnInit() {
-        console.log('hoge');
+        this.getClusters();
+        console.log(this.clusters);
     }
 }

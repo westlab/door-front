@@ -6,44 +6,40 @@ import {CLUSTERS} from './mock-clusters';
 @Injectable()
 
 export class ClusterService {
-    clusters: Cluster[];
-    words: Word[];
+    clusters = [];
     coordinates = [
         new Coordinate(2, 0, 0),
-        new Coordinate(0, 2, 0),
-        new Coordinate(-2, 0, 0),
-        new Coordinate(0, -2, 0)
+        new Coordinate(0, 2, 0)
     ];
-
     convertCluster(): Cluster[] {
-        for (let i = 0; i <= CLUSTERS.length; i++) {
-            // fetch data from mock
+        for (let i = 0; i < CLUSTERS.length; i++) {
             let name = CLUSTERS[i].name;
-            let data = this.convertWord(CLUSTERS[i].data);
+            let data = this.convertWord(i, CLUSTERS[i].data);
             let cluster = new Cluster(name, data, this.coordinates[i]);
-            this.clusters[i] = cluster;
+            this.clusters.push(cluster);
         }
         return this.clusters;
     }
 
-    convertWord(data: []): Word[] {
-        for (let i = 0; i <= data.length; i++) {
+    convertWord(iterOfCluster: number, data: {name: string, value: number}[]): Word[] {
+        let words = [];
+        for (let i = 0; i < data.length; i++) {
             let name = data[i].name;
             let value = data[i].value;
-            let word = this.insertCoordinate(i);
-            this.words[i] =  new Word(name, value, word);
+            let coordinate = this.insertCoordinateToWord(iterOfCluster, i);
+            words.push(new Word(name, value, coordinate));
         }
-        return this.words;
+        return words;
     }
 
-    insertCoordinate(num: number): Coordinate {
-        let angle_xy = 360 / CLUSTERS.length * num;
-        let angle_z = Math.floor(Math.random() * 180);
-        let r = Math.floor(Math.random());
-        return new Coordinate();
-
+    insertCoordinateToWord(iterOfCluster: number, iterOfWord: number): Coordinate {
+        let angle_xy = (2 * Math.PI / CLUSTERS.length) * iterOfWord;
+        let angle_z = Math.random() * Math.PI;
+        let r = Math.random();
+        return new Coordinate(
+            (this.coordinates[iterOfCluster].x + r * Math.sin(angle_xy) * Math.cos(angle_z)),
+            (this.coordinates[iterOfCluster].y + r * Math.sin(angle_xy) * Math.sin(angle_z)),
+            (this.coordinates[iterOfCluster].z + r * Math.cos(angle_z))
+        );
     }
-
-
-
 }
