@@ -18,10 +18,7 @@ export class ClusterComponent implements OnInit {
         private clusterService: ClusterService
     ) { }
 
-    getsClusters() {
-        this.clusters = this.clusterService.getClusters();
-    }
     ngOnInit() {
-        this.getsClusters();
+        console.log('hoge');
     }
 }
