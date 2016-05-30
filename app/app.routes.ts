@@ -1,11 +1,13 @@
 import {HomeComponent} from './home/home.component';
-import {TodolistComponent} from './todolist/todolist.component';
+import {DrDomainRankComponent} from './dr-domain-rank/dr-domain-rank.component';
+import {DrSrcIpRankComponent} from './dr-src-ip-rank/dr-src-ip-rank.component';
+import {DrBrowsingTimelineComponent} from './dr-browsing-timeline/dr-browsing-timeline.component';
 import {ClusterComponent} from './cluster/cluster.component';
-import {SimplebindComponent} from './simplebind/simplebind.component';
 
 export var APP_ROUTES: any[] = [
     { path: '/', name: 'Home', component: HomeComponent },
-    { path: '/simplebind', name: 'Simplebind', component: SimplebindComponent },
-    { path: '/todolist', name: 'Todolist', component: TodolistComponent },
+    { path: '/domainrank', name: 'DomainRanking', component: DrDomainRankComponent },
+    { path: '/srciprank', name: 'SrcIpRanking', component: DrSrcIpRankComponent },
+    { path: '/timeline', name: 'Timeline', component: DrBrowsingTimelineComponent },
     { path: '/cluster', name: 'Cluster', component: ClusterComponent }
 ];
