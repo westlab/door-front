@@ -1,0 +1,17 @@
+<div class="card card-block">
+    <div class="card-header card-info card-inverse">
+        <h4 class="card-title">{{title}}</h4>
+    </div>
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Count</th>
+        </tr>
+        <tr *ngFor="let c of counts; let idx = index" scope="row">
+            <td>{{idx + 1}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.count}}</td>
+        </tr>
+    </table>
+</div>
