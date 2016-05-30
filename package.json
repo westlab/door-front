@@ -43,7 +43,6 @@
     "bootstrap-sass": "^3.3.6",
     "es6-shim": "^0.35.0",
     "font-awesome": "^4.6.1",
-    "gulp-typings": "^2.0.0",
     "jquery": "^2.2.3",
     "lodash": "^4.13.1",
     "reflect-metadata": "0.1.3",
