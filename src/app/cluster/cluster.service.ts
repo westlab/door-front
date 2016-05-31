@@ -23,22 +23,25 @@ export class ClusterService {
 
     convertWord(iterOfCluster: number, data: {name: string, value: number}[]): Word[] {
         let words = [];
-        for (let i = 0; i < data.length; i++) {
+        let wordNum = data.length;
+        for (let i = 0; i < wordNum; i++) {
             let name = data[i].name;
             let value = data[i].value;
-            let coordinate = this.insertCoordinateToWord(iterOfCluster, i);
+            let coordinate = this.insertCoordinateToWord(iterOfCluster, i, wordNum);
             words.push(new Word(name, value, coordinate));
         }
         return words;
     }
 
-    insertCoordinateToWord(iterOfCluster: number, iterOfWord: number): Coordinate {
-        let angle_xy = (2 * Math.PI / CLUSTERS.length) * iterOfWord;
+    insertCoordinateToWord(iterOfCluster: number, iterOfWord: number, wordNum: number): Coordinate {
+      debugger;
+        let angle_xy = (2 * Math.PI / wordNum) * (iterOfWord + 1);
         let angle_z = Math.random() * Math.PI;
-        let r = Math.random();
+        // 0.5 <= r < 1.0
+        let r = 0.5*(Math.random() + 1);
         return new Coordinate(
-            (this.coordinates[iterOfCluster].x + r * Math.sin(angle_xy) * Math.cos(angle_z)),
-            (this.coordinates[iterOfCluster].y + r * Math.sin(angle_xy) * Math.sin(angle_z)),
+            (this.coordinates[iterOfCluster].x + r * Math.sin(angle_z) * Math.cos(angle_xy)),
+            (this.coordinates[iterOfCluster].y + r * Math.sin(angle_z) * Math.sin(angle_xy)),
             (this.coordinates[iterOfCluster].z + r * Math.cos(angle_z))
         );
     }
