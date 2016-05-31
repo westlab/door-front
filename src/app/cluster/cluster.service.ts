@@ -34,7 +34,6 @@ export class ClusterService {
     }
 
     insertCoordinateToWord(iterOfCluster: number, iterOfWord: number, wordNum: number): Coordinate {
-      debugger;
         let angle_xy = (2 * Math.PI / wordNum) * (iterOfWord + 1);
         let angle_z = Math.random() * Math.PI;
         // 0.5 <= r < 1.0
