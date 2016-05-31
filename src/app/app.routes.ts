@@ -10,6 +10,6 @@ export var APP_ROUTES: any[] = [
     { path: '/domainrank', name: 'DomainRanking', component: DrDomainRankComponent },
     { path: '/srciprank', name: 'SrcIpRanking', component: DrSrcIpRankComponent },
     { path: '/timeline', name: 'Timeline', component: DrBrowsingTimelineComponent },
-    { path: '/cluster', name: 'Cluster', component: ClusterComponent }
+    { path: '/cluster', name: 'Cluster', component: ClusterComponent },
     { path: '/wordcloud', name: 'WordCloud', component: DrWordCloudComponent }
 ];
