@@ -37,7 +37,7 @@ export class ClusterService {
         let angle_xy = (2 * Math.PI / wordNum) * (iterOfWord + 1);
         let angle_z = Math.random() * Math.PI;
         // 0.5 <= r < 1.0
-        let r = 0.5*(Math.random() + 1);
+        let r = 0.5 * (Math.random() + 1);
         return new Coordinate(
             (this.coordinates[iterOfCluster].x + r * Math.sin(angle_z) * Math.cos(angle_xy)),
             (this.coordinates[iterOfCluster].y + r * Math.sin(angle_z) * Math.sin(angle_xy)),
