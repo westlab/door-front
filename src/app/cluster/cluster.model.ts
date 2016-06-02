@@ -21,8 +21,8 @@ export class Cluster {
     unpackWordBy(key: string): any {
         switch (key) {
             case 'value':
-                const ZOOMINGRATE = 100;
-                return this.data.map(function (word) { return word[key] * ZOOMINGRATE });
+                const ZOOMING_RATE = 100;
+                return this.data.map(function (word) { return word[key] * ZOOMING_RATE; });
             default:
                 return this.data.map(function(word) { return word[key]; });
         }
