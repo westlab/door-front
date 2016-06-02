@@ -30,7 +30,7 @@ export class ClusterComponent implements OnInit {
         this.clusters = this.clusterService.convertCluster();
     }
     drawClusters() {
-        this.plotlyService.setReturnedData();
+        this.plotlyService.setReturnedData(this.clusters);
     }
     ngOnInit() {
         this.getClusters();
