@@ -18,4 +18,13 @@ export class Cluster {
         this.yCoordinateCollection = y;
         this.zCoordinateCollection = z;
     }
+    unpackWordBy(key: string): any {
+        switch (key) {
+            case 'value':
+                const ZOOMINGRATE = 100;
+                return this.data.map(function (word) { return word[key] * ZOOMINGRATE });
+            default:
+                return this.data.map(function(word) { return word[key]; });
+        }
+    }
 }

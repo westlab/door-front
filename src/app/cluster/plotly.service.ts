@@ -15,12 +15,12 @@ export class PlotlyService {
                 x: cluster.xCoordinateCollection,
                 y: cluster.yCoordinateCollection,
                 z: cluster.zCoordinateCollection,
-                text: 'hoge',
+                text: cluster.unpackWordBy('name'),
                 hoverinfo: 'text',
                 type: 'scatter3d',
                 marker: {
                     color: cluster.color,
-                    size: 2
+                    size: cluster.unpackWordBy('value'),
                 }
             };
         });
