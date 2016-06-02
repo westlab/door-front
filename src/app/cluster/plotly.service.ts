@@ -5,55 +5,27 @@ export class PlotlyService {
     private data: any;
     private layout: any;
     setReturnedData(clusters: Cluster[]) {
-        this.data = this.setScatterGraph();
-        this.layout = this.setLayout();
+        this.setScatterGraph(clusters);
+        this.setLayout();
         Plotly.newPlot('js-plotly', this.data, this.layout);
     }
-    
-    setScatterGraph() {
-        this.data = [{
-            x: [0, 1, 2],
-            y: [0, 2, 2],
-            z: [0, 4, 2],
-            text: ['hoge', 'fuga', 'noge'],
-            hoverinfo: 'text',
-            mode: 'markers',
-            type: 'scatter3d',
-            marker: {
-                color: [
-                    'rgb(23, 190, 207)',
-                    'rgb(23, 190, 2)',
-                    'rgb(23, 1, 207)'
-                ],
-                size: 2
-            }
-        }, {
-            x: [2, 3, 12],
-            y: [2, 5, 12],
-            z: [2, 5, 12],
-            text: ['hoge', 'fuga', 'noge'],
-            hoverinfo: 'text',
-            mode: 'markers',
-            type: 'scatter3d',
-            marker: {
-                color: [
-                    'rgb(23, 190, 207)',
-                    'rgb(23, 190, 2)',
-                    'rgb(23, 1, 207)'
-                ],
-                size: 2
-            }
-        }, {
-            alphahull: 7,
-            opacity: 0.1,
-            type: 'mesh3d',
-            color: 'rgb(12, 12, 12)',
-            x: [2, 1, 2],
-            y: [2, 2, 2],
-            z: [2, 4, 2]
-        }];
+    setScatterGraph(clusters: Cluster[]) {
+        let data = clusters.map(function(cluster, index) {
+            return {
+                x: cluster.xCoordinateCollection,
+                y: cluster.yCoordinateCollection,
+                z: cluster.zCoordinateCollection,
+                text: 'hoge',
+                hoverinfo: 'text',
+                type: 'scatter3d',
+                marker: {
+                    color: cluster.color,
+                    size: 2
+                }
+            };
+        });
+        this.data = data;
     }
-
     setLayout() {
         this.layout = {
             autosize: true,
