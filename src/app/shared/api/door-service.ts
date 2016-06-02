@@ -16,7 +16,7 @@ export class DoorService {
 
     public FetchRank = (kind: string): Observable<Response> => {
         let uri: string = '/' + kind + '_rank';
-        return this._http.get(this._conf.ApiEndpoint + uri).map(res => res.json());
+        return this._http.get(this._conf.ApiEndpoint + uri).map(res => <ICount>res.json());
     }
 
     public FetchWordRank = (): Observable<Response> => {
