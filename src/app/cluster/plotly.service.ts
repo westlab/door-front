@@ -10,7 +10,7 @@ export class PlotlyService {
         Plotly.newPlot('js-plotly', this.data, this.layout);
     }
     setScatterGraph(clusters: Cluster[]) {
-        let data = clusters.map(function(cluster, index) {
+        let data = clusters.map(function(cluster) {
             return {
                 x: cluster.xCoordinateCollection,
                 y: cluster.yCoordinateCollection,
@@ -30,6 +30,9 @@ export class PlotlyService {
         this.layout = {
             autosize: true,
             height: 700,
+            margin: {
+                t: 50
+            },
             scene: {
                 aspectratio: {
                     x: 1,

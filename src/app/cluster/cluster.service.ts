@@ -7,13 +7,16 @@ import {CLUSTERS} from './mock-clusters';
 
 export class ClusterService {
     private clusters = [];
+    // these coodinates and colors will set based on a number of clusters
     private coordinates = [
         new Coordinate(2, 0, 0),
-        new Coordinate(0, 2, 0)
+        new Coordinate(0, 2, 0),
+        new Coordinate(-2, 0, 0)
     ];
     private colors = [
         'rgb(23, 190, 207)',
-        'rgb(23, 19, 207)'
+        'rgb(23, 19, 207)',
+        'rgb(23, 19, 7)'
     ];
     convertCluster(): Cluster[] {
         for (let i = 0; i < CLUSTERS.length; i++) {
@@ -21,7 +24,6 @@ export class ClusterService {
             let data = this.convertWord(CLUSTERS[i].data);
             let color = this.colors[i];
             let collection = this.collectCoordination(i, data.length);
-            console.log(collection);
             let cluster = new Cluster(name, color, data, this.coordinates[i], collection.x, collection.y, collection.z);
             this.clusters.push(cluster);
         }
