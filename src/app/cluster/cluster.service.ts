@@ -32,10 +32,9 @@ export class ClusterService {
 
     convertWord(data: {name: string, value: number}[]): Word[] {
         let words = [];
-        let wordNum = data.length;
-        for (let i = 0; i < wordNum; i++) {
-            let name = data[i].name;
-            let value = data[i].value;
+        for (let word of data) {
+            let name = word.name;
+            let value = word.value;
             words.push(new Word(name, value));
         }
         return words;
