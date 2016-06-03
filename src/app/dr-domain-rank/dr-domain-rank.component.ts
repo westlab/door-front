@@ -12,18 +12,22 @@ import {DoorService} from '../shared/api/door-service';
     ]
 })
 export class DrDomainRankComponent implements OnInit {
-    domainCounts: DomainCount[];
+    public domainCounts: DomainCount[];
 
-    constructor(private _doorService: DoorService) {}
+    constructor(private _doorService: DoorService) {
+        console.log("constructor");
+    }
 
     ngOnInit() {
+        console.log("ngOnInit");
         this.getCount();
     }
 
     private getCount(): void {
+        console.log("getCount");
         this._doorService
             .FetchDomainRank()
-            .subscribe((data: DomainCount[]) => this.domainCounts = data,
+            .subscribe(data => this.domainCounts = data,
                 error => console.log(error),
                 () => console.log('Get all items complete'));
     }

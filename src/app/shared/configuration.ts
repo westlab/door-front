@@ -1,9 +1,13 @@
-import {Injectable} from 'angular2/core'
+import {Injectable} from '@angular/core';
 
-@Injectable
+@Injectable()
 export class Configuration {
-    public Host: string = 'http://localhost:2424'
-    public ApiUrl: string = '/api'
-    public ApiVersion: string = '/v1'
-    public ApiEndpoint: string = this.Host + this.ApiUrl + this.ApiVersion
+    public Host: string = 'http://localhost:2424';
+    public ApiUrl: string = '/api';
+    public ApiVersion: string = '/v1';
+    public ApiEndpoint: string = this.Host + this.ApiUrl + this.ApiVersion;
+
+    constructor(){
+        console.log('configuration constructor');
+    }
 }
