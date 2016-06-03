@@ -20,11 +20,12 @@ export class ClusterService {
     ];
     convertCluster(): Cluster[] {
         for (let i = 0; i < CLUSTERS.length; i++) {
-            let name = CLUSTERS[i].name;
-            let data = this.convertWord(CLUSTERS[i].data);
-            let color = this.colors[i];
-            let collection = this.collectCoordination(i, data.length);
-            let cluster = new Cluster(name, color, data, this.coordinates[i], collection.x, collection.y, collection.z);
+            let iter =  i % this.coordinates.length;
+            let name = CLUSTERS[iter].name;
+            let data = this.convertWord(CLUSTERS[iter].data);
+            let color = this.colors[iter];
+            let collection = this.collectCoordination(iter, data.length);
+            let cluster = new Cluster(name, color, data, this.coordinates[iter], collection.x, collection.y, collection.z);
             this.clusters.push(cluster);
         }
         return this.clusters;
