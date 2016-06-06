@@ -31,7 +31,8 @@ export class PlotlyService {
             autosize: true,
             height: 500,
             margin: {
-                t: 50
+                t: 50,
+                l: 350,
             },
             scene: {
                 aspectratio: {
