@@ -60,7 +60,7 @@ export class ClusterService {
             let angle_xy = (2 * Math.PI / dataNum) * (i + 1);
             let angle_z = Math.random() * Math.PI;
             // 0.5 <= r < 1.0
-            let r = 0.2 * (Math.random() + 1);
+            let r = 0.3 + (Math.random() * 0.7);
             let x = this.coordinates[iterOfCluster].x + r * Math.sin(angle_z) * Math.cos(angle_xy);
             let y = this.coordinates[iterOfCluster].y + r * Math.sin(angle_z) * Math.sin(angle_xy);
             let z = this.coordinates[iterOfCluster].z + r * Math.cos(angle_z);

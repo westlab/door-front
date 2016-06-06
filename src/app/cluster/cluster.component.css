@@ -1,6 +1,6 @@
 .cluster-outline {
     padding: 10px;
-    height: 200px;
+    height: 300px;
     color: white;
 }
 
@@ -35,16 +35,20 @@
 }
 
 .cluster__table {
-    text-align: left;
+    table-layout: fixed;
     width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .cluster__table_name {
     width: 70%;
+    text-align: left;
+    padding: 2px;
 }
 
 .cluster__table_probability {
     width: 30%;
     text-align: right;
-
 }

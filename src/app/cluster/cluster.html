@@ -3,7 +3,7 @@
     </div>
     <div class="clusters">
         <div class="row">
-            <div class="col-md-3 cluster-outline" *ngFor="let cluster of clusters">
+            <div class="col-md-4 cluster-outline" *ngFor="let cluster of clusters">
                 <div class="cluster clearfix" [ngStyle]="{'border': 'solid 1px ' + cluster.color}">
                     <div class="cluster__name" [ngStyle] ="{'background-color': cluster.color}">
                         <p class="cluster__name-element">{{cluster.name}}</p>
