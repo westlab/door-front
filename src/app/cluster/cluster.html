@@ -3,23 +3,20 @@
     </div>
     <div class="clusters">
         <div class="row">
-            <div class="col-md-3 cluster-outline">
-                <div class="cluster clearfix" style="border: solid 1px red">
-                    <div class="cluster__name" style="background-color: red">
-                        <p class="cluster__name-element">hoge</p>
+            <div class="col-md-3 cluster-outline" *ngFor="let cluster of clusters">
+                <div class="cluster clearfix">
+                    <div [ngStyle]="{'background-color': color}" class="cluster__name">
+                        <p class="cluster__name-element">{{cluster.name}}</p>
                     </div>
                     <div class="cluster__words">
                         <table class="cluster__table">
-                            <tr>
-                                <td class="cluster__table_name">hoge</td>
-                                <td class="cluster__table_probability">hoge</td>
-                            </tr>
-                            <tr>
-                                <td class="cluster__table_name">hoge</td>
-                                <td class="cluster__table_probability">hoge</td>
-                            </tr>
+                            <div>
+                                <tr *ngFor="let word of cluster.data" [ngStyle]="{'color': color}">
+                                    <td class="cluster__table_name">{{word.name}}</td>
+                                    <td class="cluster__table_probability">{{word.value}}</td>
+                                </tr>
+                            </div>
                         </table>
-
                     </div>
                 </div>
             </div>
