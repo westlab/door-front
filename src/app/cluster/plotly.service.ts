@@ -29,7 +29,7 @@ export class PlotlyService {
     setLayout() {
         this.layout = {
             autosize: true,
-            height: 700,
+            height: 500,
             margin: {
                 t: 50
             },
@@ -69,7 +69,7 @@ export class PlotlyService {
                     zeroline: false
                 },
                 title: 'word clustering from SoR',
-                width: 700
+                width: 500
             }
         };
     }

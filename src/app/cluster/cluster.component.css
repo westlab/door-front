@@ -1,0 +1,42 @@
+.cluster-outline {
+    padding: 10px;
+    height: 200px;
+}
+
+.cluster {
+
+}
+
+.cluster__name {
+    height: 100%;
+    width: 60%;
+    padding: 5px;
+    float: left;
+}
+
+.cluster__words {
+    height: 100%;
+    width: 40%;
+    padding: 5px;
+    float: right;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.cluster__table {
+    text-align: left;
+}
+
+.cluster__table_name {
+    width: 70%;
+
+}
+
+.cluster__table_probability {
+    width: 30%;
+
+}
