@@ -31,12 +31,12 @@ export class PlotlyService {
     setLayout() {
         this.layout = {
             autosize: true,
-            height: 500,
+            height: 600,
             scene: {
                 aspectratio: {
                     x: 1.5,
                     y: 1.5,
-                    z: 1.5
+                    z: 1.5,
                 },
                 camera: {
                     center: {
@@ -68,7 +68,7 @@ export class PlotlyService {
                     zeroline: false
                 },
                 title: 'word clustering from SoR',
-                width: 500
+                width: 600
             }
         };
     }
