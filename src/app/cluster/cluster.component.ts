@@ -10,6 +10,9 @@ declare var Plotly: any;
 @Component({
     selector: 'as-cluster',
     templateUrl: 'app/cluster/cluster.html',
+    styleUrls: [
+        'app/cluster/cluster.component.css'
+    ],
     directives: [CORE_DIRECTIVES],
     providers: [
         ClusterService,

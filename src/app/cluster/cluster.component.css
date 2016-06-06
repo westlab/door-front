@@ -53,3 +53,7 @@
 .cluster__table_probability {
     text-align: right;
 }
+
+.ploty-container {
+    margin: 0 auto;
+}
