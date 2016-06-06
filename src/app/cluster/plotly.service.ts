@@ -18,6 +18,7 @@ export class PlotlyService {
                 text: cluster.unpackWordBy('name'),
                 hoverinfo: 'text',
                 type: 'scatter3d',
+                name: cluster.name,
                 marker: {
                     color: cluster.color,
                     size: cluster.unpackWordBy('value'),
@@ -32,7 +33,8 @@ export class PlotlyService {
             height: 500,
             margin: {
                 t: 50,
-                l: 350,
+                l: 200,
+                r: -200
             },
             scene: {
                 aspectratio: {
