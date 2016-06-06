@@ -23,7 +23,7 @@ export class Cluster {
             case 'value':
                 const ZOOMING_RATE = 100;
                 const INITIAL_SIZE = 5;
-                return this.data.map(function (word) { return word[key] * ZOOMING_RATE + INITIAL_SIZE });
+                return this.data.map(function (word) { return word[key] * ZOOMING_RATE + INITIAL_SIZE; });
             default:
                 return this.data.map(function(word) { return word[key]; });
         }
