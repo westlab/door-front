@@ -43,12 +43,13 @@
 }
 
 .cluster__table_name {
-    width: 70%;
     text-align: left;
     padding: 2px;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cluster__table_probability {
-    width: 30%;
     text-align: right;
 }
