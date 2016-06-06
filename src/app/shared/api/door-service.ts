@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import {Http, Headers, URLSearchParams, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {DomainCount} from '../models/domain-count.model';
 import {Configuration} from '../configuration';
+import {ICount} from '../interfaces/count.interface';
 
 @Injectable()
 export class DoorService {
@@ -15,21 +15,47 @@ export class DoorService {
         this.headers.append('Accept', 'application/json');
     }
 
-    public FetchDomainRank = (): Observable<DomainCount[]> => {
+    public FetchDomainRank = (): Observable<ICount[]> => {
         return this._http.get(this.createURL('/domain_rank'), {
             headers: this.headers
         }).map(res => res.json());
     }
 
-    public FetchIPRank = (): Observable<DomainCount[]> => {
+    public FetchIPRank = (): Observable<ICount[]> => {
         return this._http.get(this.createURL('/ip_rank'), {
             headers: this.headers
         }).map(res => res.json());
     }
 
-    public FetchWordRank = (): Observable<DomainCount[]> => {
+    public FetchWordRank = (): Observable<ICount[]> => {
         return this._http.get(this.createURL('/word_rank'), {
             headers: this.headers
+        }).map(res => res.json());
+    }
+
+    public FetchWordCloud = () : Observable<Response[]> => {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('size', '10000');
+
+        return this._http.get(this.createURL('/word_rank'), {
+            search: params, headers: this.headers}
+        ).map(res => res.json());
+    }
+
+    public FetchBrowsing = (size: number) : Observable<Response[]> => {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('size', String(size));
+        return this._http.get(this.createURL('/browsings'), {
+            search: params, headers: this.headers
+        }).map(res => res.json());
+    }
+
+    public SearchBrowsing = (q: string, size: number) : Observable<Response[]> => {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('size', String(size));
+        params.set('q', q);
+        return this._http.get(this.createURL('/browsings'), {
+            search: params,  headers: this.headers
         }).map(res => res.json());
     }
 
