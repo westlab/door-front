@@ -36,6 +36,7 @@
 
 .cluster__table {
     text-align: left;
+    width: 100%;
 }
 
 .cluster__table_name {
@@ -44,5 +45,6 @@
 
 .cluster__table_probability {
     width: 30%;
+    text-align: right;
 
 }
