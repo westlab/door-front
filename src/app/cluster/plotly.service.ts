@@ -19,6 +19,7 @@ export class PlotlyService {
                 hoverinfo: 'text',
                 type: 'scatter3d',
                 name: cluster.name,
+                mode: 'markers',
                 marker: {
                     color: cluster.color,
                     size: cluster.unpackWordBy('value'),
@@ -31,16 +32,11 @@ export class PlotlyService {
         this.layout = {
             autosize: true,
             height: 500,
-            margin: {
-                t: 50,
-                l: 200,
-                r: -200
-            },
             scene: {
                 aspectratio: {
-                    x: 1,
-                    y: 1,
-                    z: 1
+                    x: 1.5,
+                    y: 1.5,
+                    z: 1.5
                 },
                 camera: {
                     center: {

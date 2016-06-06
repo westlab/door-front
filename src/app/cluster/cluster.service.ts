@@ -9,15 +9,15 @@ export class ClusterService {
     private clusters = [];
     // these coodinates and colors will set based on a number of clusters
     private coordinates = [
-        new Coordinate(2, 0, 0),
-        new Coordinate(2, -2, 0),
-        new Coordinate(0, -2, 0),
-        new Coordinate(-2, -2, 0),
-        new Coordinate(-2, 0, 0),
-        new Coordinate(-2, 2, 0),
-        new Coordinate(0, 2, 0),
-        new Coordinate(2, 2, 0),
-        new Coordinate(0, 0, 0)
+        new Coordinate(3, -3, 0),
+        new Coordinate(3, 3, 3),
+        new Coordinate(0, -3, 3),
+        new Coordinate(0, 0, 3),
+        new Coordinate(0, 0, 0),
+        new Coordinate(0, 0, -3),
+        new Coordinate(0, 3, -3),
+        new Coordinate(-3, -3, -3),
+        new Coordinate(-3, 3, 0)
     ];
     private colors = [
         '#EA5532',
@@ -60,7 +60,7 @@ export class ClusterService {
             let angle_xy = (2 * Math.PI / dataNum) * (i + 1);
             let angle_z = Math.random() * Math.PI;
             // 0.5 <= r < 1.0
-            let r = 0.3 + (Math.random() * 0.7);
+            let r = 0.5 + (Math.random() * 0.5);
             let x = this.coordinates[iterOfCluster].x + r * Math.sin(angle_z) * Math.cos(angle_xy);
             let y = this.coordinates[iterOfCluster].y + r * Math.sin(angle_z) * Math.sin(angle_xy);
             let z = this.coordinates[iterOfCluster].z + r * Math.cos(angle_z);
