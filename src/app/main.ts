@@ -3,6 +3,7 @@ import {enableProdMode} from '@angular/core';
 import {ROUTER_PROVIDERS} from '@angular/router';
 import {AppComponent} from './app.component';
 import {LoggerService} from './blocks/logger.service';
+import {HTTP_PROVIDERS} from '@angular/http';
 
 declare var ENV: string;
 
@@ -11,5 +12,5 @@ if (ENV === 'production') {
 }
 
 bootstrap(AppComponent, [
-    LoggerService, ROUTER_PROVIDERS
+    LoggerService, ROUTER_PROVIDERS, HTTP_PROVIDERS
 ]);

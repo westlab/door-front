@@ -1,24 +1,33 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DomainCount} from '../shared/models/domain-count.model';
 import {DrRankComponent} from '../dr-rank/dr-rank.component';
+import {DoorService} from '../shared/api/door-service';
+import {Observable} from 'rxjs/Rx';
+import {ICount} from '../shared/interfaces/count.interface';
 
 @Component({
     selector: 'as-dr-domain-rank',
     templateUrl: 'app/dr-domain-rank/dr-domain-rank.html',
     directives: [
         DrRankComponent
+    ],
+    providers: [
+        DoorService
     ]
 })
-export class DrDomainRankComponent {
+export class DrDomainRankComponent implements OnInit {
     domainCounts: DomainCount[];
 
-    constructor() {
-        this.domainCounts = [
-            {'name': 'jojo.com', 'count': 100},
-            {'name': 'west.com', 'count': 90},
-            {'name': 'google.com', 'count': 70},
-            {'name': 'fooo.com', 'count': 60},
-            {'name': 'ladygaga.com', 'count': 50},
-        ];
+    constructor(private doorService: DoorService) {}
+
+    ngOnInit() {
+        this.getDomainCount();
+    }
+
+    private getDomainCount(): void {
+        Observable.interval(1000 * 5).flatMap(() => {
+            return this.doorService.FetchDomainRank();
+        })
+        .subscribe(res => this.domainCounts = <ICount[]>res);
     }
 }
