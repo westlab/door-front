@@ -18,6 +18,8 @@ export class PlotlyService {
                 text: cluster.unpackWordBy('name'),
                 hoverinfo: 'text',
                 type: 'scatter3d',
+                name: cluster.name,
+                mode: 'markers',
                 marker: {
                     color: cluster.color,
                     size: cluster.unpackWordBy('value'),
@@ -29,15 +31,12 @@ export class PlotlyService {
     setLayout() {
         this.layout = {
             autosize: true,
-            height: 700,
-            margin: {
-                t: 50
-            },
+            height: 600,
             scene: {
                 aspectratio: {
-                    x: 1,
-                    y: 1,
-                    z: 1
+                    x: 1.5,
+                    y: 1.5,
+                    z: 1.5,
                 },
                 camera: {
                     center: {
@@ -69,7 +68,7 @@ export class PlotlyService {
                     zeroline: false
                 },
                 title: 'word clustering from SoR',
-                width: 700
+                width: 600
             }
         };
     }

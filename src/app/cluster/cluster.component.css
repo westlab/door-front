@@ -1,0 +1,55 @@
+.cluster-outline {
+    padding: 10px;
+    height: 300px;
+    color: white;
+}
+
+.cluster__name {
+    height: 100%;
+    width: 60%;
+    padding: 5px;
+    float: left;
+}
+
+.cluster__name-element{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    text-align: center;
+}
+
+.cluster__words {
+    height: 100%;
+    width: 40%;
+    padding: 5px;
+    float: right;
+    font-size: 12px;
+    line-height: 1.1;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.cluster__table {
+    table-layout: fixed;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cluster__table_name {
+    text-align: left;
+    padding: 2px;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cluster__table_probability {
+    text-align: right;
+}

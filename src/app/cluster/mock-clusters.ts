@@ -7,7 +7,12 @@ export var CLUSTERS = [
             {name: 'baz', value: 0.03},
             {name: 'tastuki', value: 0.02},
             {name: 'miura', value: 0.02},
-            {name: 'hoge', value: 0.05}
+            {name: 'hoge', value: 0.05},
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
         ]
     },
     {
@@ -26,6 +31,102 @@ export var CLUSTERS = [
             {name: 'hoge', value: 0.12},
             {name: 'fuga', value: 0.04},
             {name: 'hoge', value: 0.07}
+        ]
+    },
+    {
+        name: 'b4',
+        data: [
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+            {name: 'hoge', value: 0.05},
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+        ]
+    },
+    {
+        name: 'b4',
+        data: [
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+            {name: 'hoge', value: 0.05},
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+        ]
+    },
+    {
+        name: 'b4',
+        data: [
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+            {name: 'hoge', value: 0.05},
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+        ]
+    },
+    {
+        name: 'b4',
+        data: [
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+            {name: 'hoge', value: 0.05},
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+        ]
+    },
+    {
+        name: 'b4',
+        data: [
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+            {name: 'hoge', value: 0.05},
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+        ]
+    },
+    {
+        name: 'b4',
+        data: [
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
+            {name: 'hoge', value: 0.05},
+            {name: 'foo', value: 0.01},
+            {name: 'bar', value: 0.02},
+            {name: 'baz', value: 0.03},
+            {name: 'tastuki', value: 0.02},
+            {name: 'miura', value: 0.02},
         ]
     }
 ];
