@@ -3,6 +3,7 @@ import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {DomainCount} from '../models/domain-count.model';
+import {ICount} from '../interfaces/count.interface';
 
 @Injectable()
 export class DoorService {
@@ -16,7 +17,12 @@ export class DoorService {
     }
 
     public FetchDomainRank = (): Observable<DomainCount[]> => {
-        return this._http.get('http://localhost:2424/v1/domain_rank')
+        return this._http.get('http://localhost:2424/api/v1/domain_rank')
                 .map(res => res.json());
+    }
+
+    public FetchWordRank = (): Observable<ICount[]> => {
+        return this._http.get('http://localhost:2424/api/v1/word_rank')
+            .map(res => res.json());
     }
 }
