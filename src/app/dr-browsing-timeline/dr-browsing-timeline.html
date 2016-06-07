@@ -2,7 +2,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>SourceIP</th>
                 <th>Title</th>
                 <th>URL</th>
                 <th>BrowsingTime</th>
@@ -10,7 +9,6 @@
         </thead>
         <tbody>
             <tr *ngFor="let b of browsings" scope="row" class="{{colorByBrowsingTime(b.browsing_time)}}">
-                <td>{{b.src_ip}}</td>
                 <td>{{b.title}}</td>
                 <td>{{b.url}}</td>
                 <td>{{b.browsing_time}}</td>
