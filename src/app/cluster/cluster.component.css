@@ -1,5 +1,5 @@
 .cluster-outline {
-    padding: 10px;
+    padding: 7px;
     height: 300px;
     color: white;
 }
@@ -9,6 +9,10 @@
     width: 60%;
     padding: 5px;
     float: left;
+}
+
+.cluster {
+    border-radius: 5px;
 }
 
 .cluster__name-element{
@@ -40,6 +44,7 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 13px;
 }
 
 .cluster__table_name {
