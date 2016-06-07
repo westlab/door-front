@@ -18,7 +18,9 @@ import {ICount} from '../shared/interfaces/count.interface';
 export class DrDomainRankComponent implements OnInit {
     domainCounts: DomainCount[];
 
-    constructor(private doorService: DoorService) {}
+    constructor(private doorService: DoorService) {
+        console.log('domain rank');
+    }
 
     ngOnInit() {
         this.getDomainCount();

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers, URLSearchParams, Response} from '@angular/http';
+import {Http, Headers, URLSearchParams} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Configuration} from '../configuration';
@@ -11,6 +11,7 @@ export class DoorService {
     private headers: Headers;
 
     constructor(private _http: Http, private conf: Configuration) {
+        console.log('doorservice');
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
@@ -34,7 +35,7 @@ export class DoorService {
         }).map(res => res.json());
     }
 
-    public FetchWordCloud = () : Observable<Response[]> => {
+    public FetchWordCloud = (): Observable<ICount[]> => {
         let params: URLSearchParams = new URLSearchParams();
         params.set('size', '10000');
 
@@ -51,7 +52,7 @@ export class DoorService {
         }).map(res => res.json());
     }
 
-    public SearchBrowsing = (q: string, size: number) : Observable<Response[]> => {
+    public SearchBrowsing = (q: string, size: number) : Observable<Browsing[]> => {
         let params: URLSearchParams = new URLSearchParams();
         params.set('size', String(size));
         params.set('q', q);
@@ -61,6 +62,6 @@ export class DoorService {
     }
 
     private createURL(uri: string): string {
-       return this.conf + uri;
+       return this.conf.ApiEndpoint + uri;
     }
 }

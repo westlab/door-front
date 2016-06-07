@@ -20,7 +20,7 @@ export class DrBrowsingTimelineComponent implements OnInit {
         this.getBrowsings();
     }
 
-    colorByBrowsingTime(browsing_time: number) {
+    public colorByBrowsingTime(browsing_time: number) {
         if (browsing_time < 5) {
             return 'browsing-time-c1';
         } else if (browsing_time >= 5 && browsing_time <= 10) {
