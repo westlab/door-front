@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Configuration} from '../configuration';
 import {ICount} from '../interfaces/count.interface';
+import {Browsing} from '../models/browsing.model';
 
 @Injectable()
 export class DoorService {
@@ -42,7 +43,7 @@ export class DoorService {
         ).map(res => res.json());
     }
 
-    public FetchBrowsing = (size: number) : Observable<Response[]> => {
+    public FetchBrowsing = (size: number) : Observable<Browsing[]> => {
         let params: URLSearchParams = new URLSearchParams();
         params.set('size', String(size));
         return this._http.get(this.createURL('/browsings'), {
@@ -59,7 +60,7 @@ export class DoorService {
         }).map(res => res.json());
     }
 
-    private createURL(uri: string): string{
+    private createURL(uri: string): string {
        return this.conf + uri;
     }
 }
