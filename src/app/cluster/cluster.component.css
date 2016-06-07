@@ -54,6 +54,7 @@
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .cluster__table_probability {
