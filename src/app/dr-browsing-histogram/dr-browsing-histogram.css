@@ -1,0 +1,10 @@
+.histogram {
+    display: block;
+    margin: 0 auto;
+}
+.histogram__bar {
+    fill: #CDDC39;
+}
+.histogram__bar:hover {
+    fill: #216eff;
+}
