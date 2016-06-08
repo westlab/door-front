@@ -3,38 +3,38 @@
 import {Component, OnInit} from '@angular/core';
 import {WordCount} from '../shared/models/word-count.model';
 import {ICompTextSize} from './comp-text-size.interface';
+import {DoorService} from '../shared/api/door-service';
+import {Observable} from 'rxjs/Rx';
+import {ICount} from '../shared/interfaces/count.interface';
 
 @Component({
     selector: 'as-dr-word-cloud',
     templateUrl: 'app/dr-word-cloud/dr-word-cloud.html',
     styleUrls: [
         'app/dr-word-cloud/dr-word-cloud.css'
+    ],
+    providers: [
+        DoorService
     ]
 })
 export class DrWordCloudComponent implements OnInit {
     wordCounts: WordCount[];
+    words: string[];
 
-    constructor() {
-        this.wordCounts = [
-            {'name': '1.1.1.1', 'count': 100},
-            {'name': '2.2.2.2', 'count': 90},
-            {'name': '3.3.3.3', 'count': 70},
-            {'name': '4.4.4.4', 'count': 60},
-            {'name': '5.5.5.5', 'count': 50},
-        ];
-    }
+    constructor(private doorService: DoorService) {}
 
     ngOnInit() {
-        this.displayWordCloud();
+        this.words = [];
+        this.wordCounts = [];
+        this.getWord();
+        // this.displayWordCloud();
     }
 
-    displayWordCloud() {
+    public displayWordCloud(): void {
         let fill = d3.scale.category20<number>();
 
         d3.layout.cloud().size([300, 300])
-            .words([
-                'Hello', 'world', 'normally', 'you', 'want', 'more', 'words',
-                'than', 'this'].map(function(d: string) {
+            .words(this.words.map(function(d: string) {
                 return {text: d, size: 10 + Math.random() * 90};
             }))
             .padding(5)
@@ -62,5 +62,20 @@ export class DrWordCloudComponent implements OnInit {
                 })
                 .text(function(d: ICompTextSize) { return d.text; });
         }
+    }
+
+    private getWord(): void {
+        Observable.interval(2000).flatMap(() => {
+            this.words = this.wordCounts.map((d: ICount) => {
+                return d.name;
+            });
+            console.log(this.wordCounts);
+            return this.doorService.FetchWordRank();
+        }).subscribe(res => this.wordCounts = <ICount[]>res);
+
+        Observable.interval(1000 * 10).subscribe((_) => {
+            d3.select('.word-cloud-canvas svg').remove();
+            this.displayWordCloud();
+        });
     }
 }
