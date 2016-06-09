@@ -69,13 +69,13 @@ export class DrWordCloudComponent implements OnInit {
             this.words = this.wordCounts.map((d: ICount) => {
                 return d.name;
             });
-            console.log(this.wordCounts);
-            return this.doorService.FetchWordRank();
-        }).subscribe(res => this.wordCounts = <ICount[]>res);
-
-        Observable.interval(1000 * 10).subscribe((_) => {
             d3.select('.word-cloud-canvas svg').remove();
             this.displayWordCloud();
+            return this.doorService.FetchWordRank();
+        }).subscribe(res => {
+            this.wordCounts = <ICount[]>res;
+        }, err => {
+            console.log(err);
         });
     }
 }

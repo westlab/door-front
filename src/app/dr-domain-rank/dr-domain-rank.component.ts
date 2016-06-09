@@ -28,6 +28,10 @@ export class DrDomainRankComponent implements OnInit {
         Observable.interval(1000 * 5).flatMap(() => {
             return this.doorService.FetchDomainRank();
         })
-        .subscribe(res => this.domainCounts = <ICount[]>res);
+        .subscribe(res => {
+            this.domainCounts = <ICount[]>res;
+        }, err => {
+            console.log(err);
+        });
     }
 }
